@@ -5,7 +5,7 @@
 //Meal structure
 typedef struct {
 char *name;
-double price;
+float price;
 } Meal;
 
 int main(int argc, char *argv[]) {
@@ -50,21 +50,21 @@ int main(int argc, char *argv[]) {
         }
 
         //Display meal cost
-        printf("%s: $%d\n", toBeCalculated.name, toBeCalculated.price);
+        printf("%s: $%.2f\n", toBeCalculated.name, toBeCalculated.price);
 
         //Display tax amount
-        double taxInput = strtod(argv[1], NULL);
-        double taxAmount = (taxInput / 100) * toBeCalculated.price;
-        printf("Tax: $%d\n", taxAmount);
+        float taxInput = strtod(argv[1], NULL);
+        float taxAmount = (taxInput / 100) * toBeCalculated.price;
+        printf("Tax: $%.2f\n", taxAmount);
 
         //Display tip amount
-        double tipInput = strtod(argv[2], NULL);
-        double tipAmount = (tipInput / 100) * toBeCalculated.price;
-        printf("Tip: $%d\n", tipAmount);
+        float tipInput = strtod(argv[2], NULL);
+        float tipAmount = (tipInput / 100) * toBeCalculated.price;
+        printf("Tip: $%.2f\n", tipAmount);
 
         // Display total bill
-        double total = toBeCalculated.price + taxAmount + tipAmount;
-        printf("Total: $%d\n", total);
+        float total = toBeCalculated.price + taxAmount + tipAmount;
+        printf("Total: $%.2f\n", total);
         
         return 0;
     } else if(argc > 3) {
